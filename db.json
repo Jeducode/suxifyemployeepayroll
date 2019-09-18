@@ -1,0 +1,30 @@
+{
+  "employees": [
+    {
+      "first_name": "Ewere",
+      "last_name": "Iduh",
+      "role": "Senior Developer",
+      "payment_status": "Paid",
+      "salary": "400000",
+      "id": 1
+    },
+    {
+      "first_name": "Emmanuel",
+      "last_name": "Ajah",
+      "role": "Senior Developer",
+      "payment_status": "Paid",
+      "salary": "400000",
+      "id": 2
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
