@@ -1,9 +1,7 @@
 body {
   margin-top: 50px;
 }
-/* button {
-  margin: 10px 0;
-} */
+
 #toggle-more-about-div {
   text-align: center;
 }
@@ -23,4 +21,18 @@ body {
 }
 #find-employee-status {
   margin-top: 20px;
+}
+
+#update-user-form {
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.card {
+  margin-bottom: 20px;
+}
+
+#name-of-employee {
+  font-weight: bold;
+  text-align: center;
 }

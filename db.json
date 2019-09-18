@@ -1,20 +1,28 @@
 {
   "employees": [
     {
-      "first_name": "Ewere",
-      "last_name": "Iduh",
-      "role": "Senior Developer",
+      "first_name": "New",
+      "last_name": "efefef",
+      "role": "Manager",
       "payment_status": "Paid",
-      "salary": "400000",
-      "id": 1
+      "salary": "500000",
+      "id": 2
     },
     {
-      "first_name": "Cynthia",
+      "first_name": "New",
       "last_name": "Abodurin",
-      "role": "Casual Staff",
-      "payment_status": "Paid",
-      "salary": "200000",
-      "id": 2
+      "role": "Junior Developer",
+      "payment_status": "Pending",
+      "salary": "300000",
+      "id": 3
+    },
+    {
+      "first_name": "Ewere",
+      "last_name": "User",
+      "role": "Junior Developer",
+      "payment_status": "Pending",
+      "salary": "300000",
+      "id": 4
     }
   ],
   "comments": [

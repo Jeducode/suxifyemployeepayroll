@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="css/bootstrap.css" />
+    <!-- <link rel="stylesheet" href="css/fontawesome.css"> -->
     <link rel="stylesheet" href="css/all.css" />
     <link rel="stylesheet" href="css/main.css" />
     <title>Dashboard</title>
@@ -48,37 +49,37 @@
               </button>
             </div>
             <div class="modal-body">
-                    <form>
-                            <div class="form-group">
-                              <label for="create-employee-FN">First name of Employee</label>
-                              <input type="text" class="form-control" id="create-employee-FN" placeholder="John">
-                            </div>
+             <form>
+                  <div class="form-group">
+                    <label for="create-employee-FN">First name of Employee</label>
+                    <input type="text" class="form-control" id="create-employee-FN" placeholder="John">
+                  </div>
 
-                            <div class="form-group">
-                                    <label for="create-employee-LN">Last name of Employee</label>
-                                    <input type="text" class="form-control" id="create-employee-LN" placeholder="Doe">
-                            </div>
+                  <div class="form-group">
+                          <label for="create-employee-LN">Last name of Employee</label>
+                          <input type="text" class="form-control" id="create-employee-LN" placeholder="Doe">
+                  </div>
 
-                            <div class="form-group">
-                              <label for="select-role">Select Role</label>
-                              <select class="form-control" id="select-role">
-                                <option>Manager</option>
-                                <option>Senior Developer</option>
-                                <option>Junior Developer</option>
-                                <option>Casual Staff</option>
-                                <option>Intern</option>
-                              </select>
-                            </div>
+                  <div class="form-group">
+                    <label for="select-role">Select Role</label>
+                    <select class="form-control" id="select-role">
+                      <option>Manager</option>
+                      <option>Senior Developer</option>
+                      <option>Junior Developer</option>
+                      <option>Casual Staff</option>
+                      <option>Intern</option>
+                    </select>
+                  </div>
 
-                            <div class="form-group">
-                              <label for="payment-status">Select Payment Status</label>
-                              <select class="form-control" id="payment-status">
-                                <option>Paid</option>
-                                <option>Pending</option>
-                              </select>
-                            </div>
-                            
-                          </form>
+                  <div class="form-group">
+                    <label for="payment-status">Select Payment Status</label>
+                    <select class="form-control" id="payment-status">
+                      <option>Paid</option>
+                      <option>Pending</option>
+                    </select>
+                  </div>
+                  
+                </form>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">cancel</button>
@@ -95,7 +96,8 @@
             <strong>Find an Employee:</strong> Get all the Information about a
             certain employee, from the database.
                  <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary btn-sm " data-toggle="modal" data-target="#find-employee">
+
+          <button type="button" class="btn btn-primary btn-sm " data-toggle="modal" data-target="#find-employee">
              FIND EMPLOYEE 
               </button>
               <div class="clearfix"></div>
@@ -128,6 +130,7 @@
                         </div>
 
                     </div>
+
                     <!-- FIND EMPLOYEE BODY CONTENT ENDS-->
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-dismiss="modal">cancel</button>
@@ -142,7 +145,7 @@
             monthly salaries with a single click.
 
                 <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#pay-employee">
+          <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#pay-employee">
                 PAY NOW
                  </button>
                  
@@ -169,63 +172,16 @@
         </div>
       </div>
 
-      <!-- UODATE EMPLOYEE BUTTON -->
+      <!-- UPDATE section -->
 
-     
-
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Change Employee Details</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+      <div class="card" id="update-users-card">
       </div>
-      <div class="modal-body">
-        <div class="modal-body">
-          <form>
-            <div class="form-group">
-              <label for="create-employee-FN">Update First name of Employee</label>
-              <input type="text" class="form-control" id="create-employee-FN" placeholder="John">
-            </div>
 
-            <div class="form-group">
-                    <label for="create-employee-LN">Update Last name of Employee</label>
-                    <input type="text" class="form-control" id="create-employee-LN" placeholder="Doe">
-            </div>
 
-            <div class="form-group">
-              <label for="select-role">Update Employee Role</label>
-              <select class="form-control" id="select-role">
-                <option>Manager</option>
-                <option>Senior Developer</option>
-                <option>Junior Developer</option>
-                <option>Casual Staff</option>
-                <option>Intern</option>
-              </select>
-            </div>
 
-            <div class="form-group">
-              <label for="payment-status">Update Payment Status</label>
-              <select class="form-control" id="payment-status">
-                <option>Paid</option>
-                <option>Pending</option>
-              </select>
-            </div>
-            
-          </form>
+      
 
-         </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Send message</button>
-      </div>
-    </div>
-  </div>
-</div>
-      <!--Table-->
+      <!--EMPLOYEE Table AND OUTPUT DATA-->
       <table id="tablePreview" class="table table-hover table-sm table-striped">
         <!--Table head-->
         <thead>

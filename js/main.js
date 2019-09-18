@@ -3,8 +3,8 @@ $(document).ready(function() {
 
   var $employees = $("#employee-data");
   var $counter = 1;
-  var $emolyeeFirstName = $("#create-employee-FN").val();
-  var $emolyeeLastName = $("#create-employee-LN").val();
+  // alert($("employees[1].first_name"));
+  // console.log($("employees[1].first_name"));
 
   // toggle the payroll actions
   $("#toggle-more-about-div").on("click", function() {
@@ -87,6 +87,7 @@ $("#save-employees").on("click", function(e) {
     salary: expectedSalary
   };
 
+  //CREATE AND POST FROM THE CREATE
   $.ajax({
     type: "POST",
     url: "http://localhost:3000/employees",
@@ -120,13 +121,94 @@ $("#save-employees").on("click", function(e) {
   });
 });
 
+// DELETE FUNCTION
 $("#employee-data").on("click", ".remove-button", function(e) {
   e.preventDefault();
   $.ajax({
     type: "DELETE",
-    url: "http://localhost:3000/employees/" + $(this).attr("data-id"),
-    success: function() {
-      $tr.remove();
-    }
+    url: "http://localhost:3000/employees/" + $(this).attr("data-id")
+    // success: function() {
+    //   $tr.remove();
+    // }
   });
+});
+
+// ' + '"' + 1 +'"' + '
+// UPDATE FUNCTION
+
+$("#employee-data").on("click", ".update-button", function(e) {
+  $("#more-about-div").toggle();
+  $("#update-users-card").append(` <div  class="modal-content ">
+  <div class="modal-header update-employee-card ">
+    <h5 class="modal-title" id="exampleModalCenterTitle">Update Employee Details</h5>
+  </div>
+  <div class="modal-body">
+   <form>
+        <div class="form-group">
+          <label for="update-employee-FN">First name of Employee</label>
+          <input type="text" class="form-control" id="update-employee-FN" placeholder="John">
+        </div>
+
+        <div class="form-group">
+                <label for="update-employee-LN">Last name of Employee</label>
+                <input type="text" class="form-control" id="update-employee-LN" placeholder="Doe">
+        </div>
+
+        <div class="form-group">
+          <label for="update-role">Select Role</label>
+          <select class="form-control" id="update-role">
+            <option>Manager</option>
+            <option>Senior Developer</option>
+            <option>Junior Developer</option>
+            <option>Casual Staff</option>
+            <option>Intern</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="update-payment-status">Select Payment Status</label>
+          <select class="form-control" id="update-payment-status">
+            <option>Paid</option>
+            <option>Pending</option>
+          </select>
+        </div>  
+      </form>
+  </div>
+  <div class="update-footer">
+    <button type="button" id="cancel-update" class="btn btn-danger btn-block" data-dismiss="modal">cancel</button>
+    <button class="btn btn-primary btn-block" id="update-employees">Save changes</button>
+  </div>
+</div>`);
+  alert($("e.target").attr("data-id"));
+});
+
+$("#update-users-card").on("click", "#cancel-update", function(e) {
+  $("#update-users-card").remove();
+  $("#more-about-div").toggle();
+});
+
+$("#update-users-card").on("click", "#update-employees", function(e) {
+  // alert($("remove-button").attr("id"));
+  // alert($("#update-employee-FN").val());
+  // alert($("#update-employee-LN").val());
+  // alert($("#update-role option:selected").val());
+  // alert($("#update-payment-status option:selected").val());
+
+  var updateEmployeeData = {
+    first_name: $("#update-employee-FN").val(),
+    last_name: $("#update-employee-LN").val(),
+    role: $("#update-role option:selected").text(),
+    payment_status: $("#update-payment-status option:selected").text(),
+    salary: expectedSalary
+  };
+
+  $.ajax({
+    type: "PUT",
+    url: "http://localhost:3000/employees/" + $(this).attr("id"),
+    data: updateEmployeeData,
+    success: function() {}
+  });
+
+  // $("#update-users-card").remove();
+  // $("#more-about-div").toggle();
 });
