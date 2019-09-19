@@ -204,7 +204,7 @@ $(document).ready(function() {
   //
   //
   //
-  //FIND EMPLOYEE FUNCTION
+  //SEARCH EMPLOYEE FUNCTION
 
   $("#find-employee-status").on("click", function() {
     $.ajax({
@@ -214,20 +214,27 @@ $(document).ready(function() {
         $("#get-search-employee-FN").val(),
       success: function(findEmployees) {
         $.each(findEmployees, function(i, find_employee) {
-          $("#find-employee-retrieve").append(` <div class="card-body">
-          <h5 class="card-title">About ${$(
-            "#get-search-employee-FN"
-          ).val()}</h5>
-          <ul>
-              <li> Employee FirstName: ${find_employee.first_name} </li>
-              <li> Employee LastName: ${find_employee.last_name} </li>
-              <li> Employee Role: ${find_employee.role}  </li>
-              <li> Employee Salary: ${find_employee.salary}  </li>
-              <li> Employee Payment Status: ${find_employee.payment_status}</li>
-            </ul>
-        </div>
-      `);
+          if (
+            $("#get-search-employee-FN").val() === `${find_employee.first_name}`
+          ) {
+            $("#find-employee-retrieve").append(` <div class="card-body">
+            <h5 class="card-title">About ${$(
+              "#get-search-employee-FN"
+            ).val()} ${find_employee.last_name}</h5>
+            <ul >
+                <li> Employee FirstName: ${find_employee.first_name} </li>
+                <li> Employee LastName: ${find_employee.last_name} </li>
+                <li> Employee Role: ${find_employee.role}  </li>
+                <li> Employee Salary: ${find_employee.salary}  </li>
+                <li> Employee Payment Status: ${
+                  find_employee.payment_status
+                }</li>
+              </ul>
+          </div>
+        `);
+          }
         });
+        // $("#find-employee-retrieve").hide();
       }
     });
 

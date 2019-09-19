@@ -1,11 +1,11 @@
 {
   "employees": [
     {
-      "first_name": "Mr",
-      "last_name": "Put",
-      "role": "Casual Staff",
-      "salary": "200000",
-      "payment_status": "Paid",
+      "first_name": "Amara",
+      "last_name": "Johnson",
+      "role": "Junior Developer",
+      "salary": "300000",
+      "payment_status": "Pending",
       "id": 5
     },
     {
@@ -35,10 +35,18 @@
     {
       "first_name": "Arya",
       "last_name": "Stark",
-      "role": "Junior Developer",
-      "payment_status": "Pending",
-      "salary": "300000",
+      "role": "Intern",
+      "salary": "100000",
+      "payment_status": "Paid",
       "id": 9
+    },
+    {
+      "first_name": "Emmanuel",
+      "last_name": "Iduh",
+      "role": "Intern",
+      "payment_status": "Pending",
+      "salary": "100000",
+      "id": 10
     }
   ],
   "comments": [
