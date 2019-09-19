@@ -1,28 +1,43 @@
 {
   "employees": [
     {
-      "first_name": "New",
-      "last_name": "efefef",
-      "role": "Manager",
-      "payment_status": "Paid",
-      "salary": "500000",
-      "id": 2
+      "first_name": "Alright",
+      "last_name": "Work",
+      "role": "Casual Staff",
+      "salary": "200000",
+      "payment_status": "Pending",
+      "id": 4
     },
     {
-      "first_name": "New",
-      "last_name": "Abodurin",
+      "first_name": "Put ",
+      "last_name": "Something",
       "role": "Junior Developer",
-      "payment_status": "Pending",
-      "salary": "300000",
-      "id": 3
+      "payment_status": "Paid",
+      "id": 5
     },
     {
       "first_name": "Ewere",
-      "last_name": "User",
+      "last_name": "Puttin",
       "role": "Junior Developer",
       "payment_status": "Pending",
       "salary": "300000",
-      "id": 4
+      "id": 6
+    },
+    {
+      "first_name": "Oladokun",
+      "last_name": "Oladapo",
+      "role": "Manager",
+      "payment_status": "Paid",
+      "salary": "500000",
+      "id": 7
+    },
+    {
+      "first_name": "Now",
+      "last_name": "Please",
+      "role": "Intern",
+      "salary": "100000",
+      "payment_status": "Paid",
+      "id": 8
     }
   ],
   "comments": [
