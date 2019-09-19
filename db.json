@@ -1,17 +1,10 @@
 {
   "employees": [
     {
-      "first_name": "Alright",
-      "last_name": "Work",
+      "first_name": "Mr",
+      "last_name": "Put",
       "role": "Casual Staff",
       "salary": "200000",
-      "payment_status": "Pending",
-      "id": 4
-    },
-    {
-      "first_name": "Put ",
-      "last_name": "Something",
-      "role": "Junior Developer",
       "payment_status": "Paid",
       "id": 5
     },
@@ -24,20 +17,28 @@
       "id": 6
     },
     {
-      "first_name": "Oladokun",
-      "last_name": "Oladapo",
-      "role": "Manager",
-      "payment_status": "Paid",
-      "salary": "500000",
+      "first_name": "Morgan",
+      "last_name": "Freeman",
+      "role": "Junior Developer",
+      "payment_status": "Pending",
+      "salary": "300000",
       "id": 7
     },
     {
-      "first_name": "Now",
-      "last_name": "Please",
-      "role": "Intern",
-      "salary": "100000",
+      "first_name": "Vladmir",
+      "last_name": "Puttin",
+      "role": "Junior Developer",
       "payment_status": "Paid",
+      "salary": "300000",
       "id": 8
+    },
+    {
+      "first_name": "Arya",
+      "last_name": "Stark",
+      "role": "Junior Developer",
+      "payment_status": "Pending",
+      "salary": "300000",
+      "id": 9
     }
   ],
   "comments": [

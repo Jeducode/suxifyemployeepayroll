@@ -47,79 +47,73 @@ $(document).ready(function() {
   });
 
   //Find Employee actions
-  $("#find-employee-status").hide();
 
-  $("#show-employee-status").on("click", function() {
-    $("#find-employee-status").show();
-  });
-});
+  //CREATE AND POST FROM THE CREATE
 
-//CREATE AND POST FROM THE CREATE
-
-$("#save-employees").on("click", function(e) {
-  function salary(role) {
-    if (role === "Manager") {
-      let managerSalary = 500000;
-      return managerSalary;
-    } else if (role === "Senior Developer") {
-      let seniorDevSalary = 400000;
-      return seniorDevSalary;
-    } else if (role === "Intern") {
-      let internSalary = 100000;
-      return internSalary;
-    } else if (role === "Junior Developer") {
-      let juniorDevSalary = 300000;
-      return juniorDevSalary;
-    } else if (role === "Casual Staff") {
-      let casualStaffSalary = 200000;
-      return casualStaffSalary;
+  $("#save-employees").on("click", function(e) {
+    function salary(role) {
+      if (role === "Manager") {
+        let managerSalary = 500000;
+        return managerSalary;
+      } else if (role === "Senior Developer") {
+        let seniorDevSalary = 400000;
+        return seniorDevSalary;
+      } else if (role === "Intern") {
+        let internSalary = 100000;
+        return internSalary;
+      } else if (role === "Junior Developer") {
+        let juniorDevSalary = 300000;
+        return juniorDevSalary;
+      } else if (role === "Casual Staff") {
+        let casualStaffSalary = 200000;
+        return casualStaffSalary;
+      }
     }
-  }
 
-  var expectedSalary = salary($("#select-role option:selected").text());
+    var expectedSalary = salary($("#select-role option:selected").text());
 
-  var employeeData = {
-    first_name: $("#create-employee-FN").val(),
-    last_name: $("#create-employee-LN").val(),
-    role: $("#select-role option:selected").text(),
-    payment_status: $("#payment-status option:selected").text(),
-    salary: expectedSalary
-  };
+    var employeeData = {
+      first_name: $("#create-employee-FN").val(),
+      last_name: $("#create-employee-LN").val(),
+      role: $("#select-role option:selected").text(),
+      payment_status: $("#payment-status option:selected").text(),
+      salary: expectedSalary
+    };
 
-  $.ajax({
-    type: "POST",
-    url: "http://localhost:3000/employees",
-    data: employeeData,
-    success: function goToURL() {
-      location.href = "index.html";
-    },
-    error: function() {
-      alert("error saving order");
-    }
+    $.ajax({
+      type: "POST",
+      url: "http://localhost:3000/employees",
+      data: employeeData,
+      success: function goToURL() {
+        location.href = "index.html";
+      },
+      error: function() {
+        alert("error saving order");
+      }
+    });
   });
-});
 
-// DELETE FUNCTION
+  // DELETE FUNCTION
 
-$("#employee-data").on("click", ".remove-button", function(e) {
-  var $tr = $(this).closest("tr");
-  e.preventDefault();
-  $.ajax({
-    type: "DELETE",
-    url: "http://localhost:3000/employees/" + $(this).attr("data-id"),
-    success: function() {
-      $tr.remove();
-    }
+  $("#employee-data").on("click", ".remove-button", function(e) {
+    var $tr = $(this).closest("tr");
+    e.preventDefault();
+    $.ajax({
+      type: "DELETE",
+      url: "http://localhost:3000/employees/" + $(this).attr("data-id"),
+      success: function() {
+        $tr.remove();
+      }
+    });
   });
-});
 
-// UPDATE FUNCTION
+  // UPDATE FUNCTION
 
-$("#employee-data").on("click", ".update-button", function(e) {
-  var $update_id = $(this).attr("data-id");
-  $("#more-about-div").toggle();
-  $("#employee-data").toggle();
-  $("#update-users-card").append(` <div  class="modal-content ">
+  $("#employee-data").on("click", ".update-button", function(e) {
+    var $update_id = $(this).attr("data-id");
+    $("#more-about-div").toggle();
+    $("#employee-data").toggle();
+    $("#update-users-card").append(` <div  class="modal-content ">
   <div class="modal-header update-employee-card ">
     <h5 class="modal-title" id="exampleModalCenterTitle">Update Employee Details</h5>
   </div>
@@ -161,79 +155,85 @@ $("#employee-data").on("click", ".update-button", function(e) {
   </div>
 </div>`);
 
-  function salary_update(role) {
-    if (role === "Manager") {
-      let managerSalary = 500000;
-      return managerSalary;
-    } else if (role === "Senior Developer") {
-      let seniorDevSalary = 400000;
-      return seniorDevSalary;
-    } else if (role === "Intern") {
-      let internSalary = 100000;
-      return internSalary;
-    } else if (role === "Junior Developer") {
-      let juniorDevSalary = 300000;
-      return juniorDevSalary;
-    } else if (role === "Casual Staff") {
-      let casualStaffSalary = 200000;
-      return casualStaffSalary;
-    }
-  }
-
-  var get_payment_update = salary_update(
-    $("#update-role option:selected").text()
-  );
-
-  $("#update-users-card").on("click", "#update-employees", function(e) {
-    $.ajax({
-      url: "http://localhost:3000/employees/" + `${$update_id}`,
-      type: "PUT",
-      data: {
-        first_name: $("#update-employee-FN").val(),
-        last_name: $("#update-employee-LN").val(),
-        role: $("#update-role option:selected").text(),
-        salary: salary_update($("#update-role option:selected").text()),
-        payment_status: $("#update-payment-status option:selected").text()
-      },
-      success: function() {
-        location.href = "index.html";
-      },
-      error: function() {
-        alert("error saving order");
+    function salary_update(role) {
+      if (role === "Manager") {
+        let managerSalary = 500000;
+        return managerSalary;
+      } else if (role === "Senior Developer") {
+        let seniorDevSalary = 400000;
+        return seniorDevSalary;
+      } else if (role === "Intern") {
+        let internSalary = 100000;
+        return internSalary;
+      } else if (role === "Junior Developer") {
+        let juniorDevSalary = 300000;
+        return juniorDevSalary;
+      } else if (role === "Casual Staff") {
+        let casualStaffSalary = 200000;
+        return casualStaffSalary;
       }
+    }
+
+    $("#update-users-card").on("click", "#update-employees", function(e) {
+      $.ajax({
+        url: "http://localhost:3000/employees/" + `${$update_id}`,
+        type: "PUT",
+        data: {
+          first_name: $("#update-employee-FN").val(),
+          last_name: $("#update-employee-LN").val(),
+          role: $("#update-role option:selected").text(),
+          salary: salary_update($("#update-role option:selected").text()),
+          payment_status: $("#update-payment-status option:selected").text()
+        },
+        success: function() {
+          location.href = "index.html";
+        },
+        error: function() {
+          alert("error saving order");
+        }
+      });
+    });
+
+    $("#update-users-card").on("click", "#cancel-update", function(e) {
+      location.href = "index.html";
+      $("#update-users-card").remove();
+      $("#more-about-div").toggle();
     });
   });
 
-  $("#update-users-card").on("click", "#cancel-update", function(e) {
-    location.href = "index.html";
-    $("#update-users-card").remove();
-    $("#more-about-div").toggle();
+  //
+  //
+  //
+  //FIND EMPLOYEE FUNCTION
+
+  $("#find-employee-status").on("click", function() {
+    $.ajax({
+      type: "GET",
+      url:
+        "http://localhost:3000/employees?employees.first_name=" +
+        $("#get-search-employee-FN").val(),
+      success: function(findEmployees) {
+        $.each(findEmployees, function(i, find_employee) {
+          $("#find-employee-retrieve").append(` <div class="card-body">
+          <h5 class="card-title">About ${$(
+            "#get-search-employee-FN"
+          ).val()}</h5>
+          <ul>
+              <li> Employee FirstName: ${find_employee.first_name} </li>
+              <li> Employee LastName: ${find_employee.last_name} </li>
+              <li> Employee Role: ${find_employee.role}  </li>
+              <li> Employee Salary: ${find_employee.salary}  </li>
+              <li> Employee Payment Status: ${find_employee.payment_status}</li>
+            </ul>
+        </div>
+      `);
+        });
+      }
+    });
+
+    //Clear employee details on focus
+    $("#get-search-employee-FN").focus(function() {
+      $("#find-employee-retrieve").empty();
+    });
   });
 });
-
-// Update Function Eployee Role
-
-//
-// var updated_salary = salary_update()
-
-//create success function not needed
-// $employees.append(
-//   `<tr><th scope="row">${$counter++}</th>
-//     <td>${newEmployee.first_name}</td>  <td>${newEmployee.last_name}</td>
-//     <td>${newEmployee.role}</td> <td>${employeeData.salary}</td> <td>${
-//     newEmployee.payment_status
-//   }</td>
-//     <td>
-//     <a data-id="${
-//       employee.id
-//     }"  class="btn btn-danger update-button" data-toggle="modal" data-target="#update-button"
-//     <i class="fas fa-edit"></i>
-//     </a>
-//     </td>
-//     <td>
-//     <a data-id="${employee.id}" class="btn btn-danger remove-button">
-//     <i class="far fa-trash-alt"></i>
-//     </a>
-//     </td>
-//     </tr> `
-// );

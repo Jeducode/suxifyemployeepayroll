@@ -27,11 +27,17 @@
           <h5 id="more-about-div-title" class="card-title">
             What do you want to do?
           </h5>
+
+
+
+
+          <!-- CREATE NEW EMPLOYEE DATA -->
+
           <p class="card-text more-queries">
-            <strong>Create employees:</strong> Create enteries for new employees
+         <strong>Create employees:</strong> Create enteries for new employees
             that are not already in the company's database
 
-            <!-- Button trigger modal -->
+        <!-- Button trigger modal -->
         <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#create-employee">
         CREATE NOW
       </button>
@@ -87,18 +93,22 @@
             </div>
           </div>
         </div>
-      </div>
-
+         </div>
           </p>
 
 
+
+          <!-- FIND EMPLOYEE STATUS BY NAME -->
+
           <p class="card-text more-queries">
             <strong>Find an Employee:</strong> Get all the Information about a
-            certain employee, from the database.
-                 <!-- Button trigger modal -->
+            certain employee by First Name, from the database.
+
+
+            <!-- Button trigger modal -->
 
           <button type="button" class="btn btn-primary btn-sm " data-toggle="modal" data-target="#find-employee">
-             FIND EMPLOYEE 
+             FIND EMPLOYEE
               </button>
               <div class="clearfix"></div>
               
@@ -107,31 +117,25 @@
                 <div class="modal-dialog modal-dialog-centered" role="document">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalCenterTitle">Find Employee Data</h5>
+                      <h5 class="modal-title" id="exampleModalCenterTitle">Find Employee Data by First Name</h5>
                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                       </button>
                     </div>
                     <!-- FIND EMPLOYEE BODY CONTENT -->
-                    <div class="modal-body">
+                    <div class="modal-body" id = "find-employee-card-content">
                      <form>
                         <div class="form-group">
-                            <label for="create-employee-FN">Name of Employee</label>
-                            <input type="text" class="form-control" id="create-employee-FN" placeholder="Abiodun">
+                            <label for="create-employee-FN">Employee First Name</label>
+                            <input type="text" class="form-control" id="get-search-employee-FN" placeholder="E.g Abiodun">
                         </div>
-                        <button type="button" class="btn btn-primary" id="show-employee-status">Search</button>
+                        <button type="button" class="btn btn-primary" id="find-employee-status">Search</button>
                         </form>
 
-                        <div class="card" id = "find-employee-status">
-                          <div class="card-body">
-                            <h5 class="card-title">About Employee</h5>
-                            <p class="card-text">Payment status: Pending</p>
-                          </div>
-                        </div>
+                        <div class="card" id = "find-employee-retrieve">
+                        </div> 
 
                     </div>
-
-                    <!-- FIND EMPLOYEE BODY CONTENT ENDS-->
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-dismiss="modal">cancel</button>
                      

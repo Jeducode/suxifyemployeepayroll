@@ -21,6 +21,7 @@ body {
 }
 #find-employee-status {
   margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 #update-user-form {
@@ -35,4 +36,8 @@ body {
 #name-of-employee {
   font-weight: bold;
   text-align: center;
+}
+
+#show-employee-status {
+  margin-bottom: 20px;
 }
