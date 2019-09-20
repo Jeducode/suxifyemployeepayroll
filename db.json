@@ -39,24 +39,13 @@
       "salary": "100000",
       "payment_status": "Paid",
       "id": 9
-    },
-    {
-      "first_name": "Emmanuel",
-      "last_name": "Iduh",
-      "role": "Intern",
-      "payment_status": "Pending",
-      "salary": "100000",
-      "id": 10
     }
   ],
-  "comments": [
+  "admin": [
     {
       "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "email": "admin@gmail.com",
+      "password": "1234"
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }

@@ -196,8 +196,6 @@ $(document).ready(function() {
 
     $("#update-users-card").on("click", "#cancel-update", function(e) {
       location.href = "index.html";
-      $("#update-users-card").remove();
-      $("#more-about-div").toggle();
     });
   });
 
@@ -214,13 +212,16 @@ $(document).ready(function() {
         $("#get-search-employee-FN").val(),
       success: function(findEmployees) {
         $.each(findEmployees, function(i, find_employee) {
+          var search_emp_id = `${find_employee.first_name}`;
           if (
-            $("#get-search-employee-FN").val() === `${find_employee.first_name}`
+            $("#get-search-employee-FN")
+              .val()
+              .toLowerCase() === search_emp_id.toLowerCase()
           ) {
             $("#find-employee-retrieve").append(` <div class="card-body">
-            <h5 class="card-title">About ${$(
-              "#get-search-employee-FN"
-            ).val()} ${find_employee.last_name}</h5>
+            <h5 class="card-title">About ${$("#get-search-employee-FN")
+              .val()
+              .toUpperCase()} ${find_employee.last_name}</h5>
             <ul >
                 <li> Employee FirstName: ${find_employee.first_name} </li>
                 <li> Employee LastName: ${find_employee.last_name} </li>
@@ -234,13 +235,54 @@ $(document).ready(function() {
         `);
           }
         });
-        // $("#find-employee-retrieve").hide();
       }
     });
 
     //Clear employee details on focus
     $("#get-search-employee-FN").focus(function() {
       $("#find-employee-retrieve").empty();
+    });
+  });
+
+  //
+  //
+  // SEARCH AND PAY ALL EMPLOYEES FUNCTIONALITY
+
+  $("#get-all-employees-status").on("click", function() {
+    $.ajax({
+      type: "GET",
+      url: "http://localhost:3000/employees?employees.payment_status",
+
+      success: function(findPaymentStatus) {
+        $.each(findPaymentStatus, function(i, find_status) {
+          if (`${find_status.payment_status}` === "Pending") {
+            $("#employee-status-list").append(
+              `<li>${find_status.first_name} ${find_status.last_name}</li> `
+            );
+          }
+        });
+        $("#employee-status-list")
+          .append(`<br><h5 class="text-center">Do you wish to pay them now?</h5><br><button id="pay-all-employees" type="button" class="btn btn-light btn-block">Yes</button>
+        <button type="button" class="btn btn-danger btn-block" data-dismiss="modal">No</button>`);
+        $("#get-all-employees-status").hide();
+      }
+    });
+  });
+
+  $("#employee-status-list").on("click", "#pay-all-employees", function(e) {
+    $.ajax({
+      url: "http://localhost:3000/employees/",
+      type: "PUT",
+      data: {
+        payment_status: "Paid"
+      },
+      success: function() {
+        alert("Yes");
+        // location.href = "index.html";
+      },
+      error: function() {
+        alert("No way");
+      }
     });
   });
 });
