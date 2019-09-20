@@ -9,7 +9,9 @@ $(document).ready(function() {
             $("#inputEmail").val() === admin.email &&
             $("#inputPassword").val() === admin.password
           ) {
-            location.href = "index.html";
+            location.href = "dashboard.html";
+          } else {
+            alert("Wrong Login Information");
           }
         });
       }

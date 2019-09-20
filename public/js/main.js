@@ -11,7 +11,7 @@ $(document).ready(function() {
 
   //Logout Button action
   $("#log-out-button").on("click", function goToURL() {
-    location.href = "login.html";
+    location.href = "index.html";
   });
 
   //GET all the data from the db and output them all in the table
@@ -31,13 +31,13 @@ $(document).ready(function() {
           <a data-id="${
             employee.id
           }"  class="btn btn-danger update-button" data-toggle="modal" data-target="#update-button" >
-          <i class="fas fa-edit"></i>
+          <i class="fa fa-edit"></i>
           </a>
         
           </td>  
           <td>
           <a data-id="${employee.id}" class="btn btn-danger remove-button">
-          <i class="far fa-trash-alt"></i>
+          <i class="fa fa-trash-alt"></i>
           </a>
           </td>   
           </tr> `
@@ -85,7 +85,7 @@ $(document).ready(function() {
       url: "http://localhost:3000/employees",
       data: employeeData,
       success: function goToURL() {
-        location.href = "index.html";
+        location.href = "dashboard.html";
       },
       error: function() {
         alert("error saving order");
@@ -186,7 +186,7 @@ $(document).ready(function() {
           payment_status: $("#update-payment-status option:selected").text()
         },
         success: function() {
-          location.href = "index.html";
+          location.href = "dashboard.html";
         },
         error: function() {
           alert("error saving order");
@@ -195,7 +195,7 @@ $(document).ready(function() {
     });
 
     $("#update-users-card").on("click", "#cancel-update", function(e) {
-      location.href = "index.html";
+      location.href = "dashboard.html";
     });
   });
 
@@ -269,6 +269,8 @@ $(document).ready(function() {
     });
   });
 
+  //PAY ALL PENDING EMPLOYEES
+
   $("#employee-status-list").on("click", "#pay-all-employees", function(e) {
     $.ajax({
       url: "http://localhost:3000/employees/",
@@ -278,10 +280,10 @@ $(document).ready(function() {
       },
       success: function() {
         alert("Yes");
-        // location.href = "index.html";
+        // location.href = "dashboard.html";
       },
       error: function() {
-        alert("No way");
+        alert("Error Paying EMployees");
       }
     });
   });

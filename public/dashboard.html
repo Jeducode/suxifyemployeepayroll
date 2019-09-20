@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <!-- <link rel="stylesheet" href="css/fontawesome.css"> -->
+    <link rel="stylesheet" href="css/all.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <title>Dashboard</title>
+  </head>
+  <body>
+    
+    <div class="container">
+        <div>
+            <button type="button" id="log-out-button" class="btn btn-success float-right">Log out</button>
+        </div>
+        <div class="clearfix"></div>
+      <div id="card1" class="card">
+        <div id="toggle-more-about-div" class="card-header">
+          <strong
+            >EMPLOYEE ONLINE PAYROLL SYSTEM (Click to Toggle)</strong
+          >
+        </div>
+        <div id="more-about-div" class="card-body">
+          <h5 id="more-about-div-title" class="card-title">
+            What do you want to do?
+          </h5>
+
+
+
+
+          <!-- CREATE NEW EMPLOYEE DATA -->
+
+          <p class="card-text more-queries">
+         <strong>Create employees:</strong> Create enteries for new employees
+            that are not already in the company's database
+
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#create-employee">
+        CREATE NOW
+      </button>
+
+      <div class="clear-fix"></div>
+      
+      <!-- Modal -->
+      <div class="modal fade" id="create-employee" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalCenterTitle">Create New Employee Data</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+             <form>
+                  <div class="form-group">
+                    <label for="create-employee-FN">First name of Employee</label>
+                    <input type="text" class="form-control" id="create-employee-FN" placeholder="John">
+                  </div>
+
+                  <div class="form-group">
+                          <label for="create-employee-LN">Last name of Employee</label>
+                          <input type="text" class="form-control" id="create-employee-LN" placeholder="Doe">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="select-role">Select Role</label>
+                    <select class="form-control" id="select-role">
+                      <option>Manager</option>
+                      <option>Senior Developer</option>
+                      <option>Junior Developer</option>
+                      <option>Casual Staff</option>
+                      <option>Intern</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="payment-status">Select Payment Status</label>
+                    <select class="form-control" id="payment-status">
+                      <option>Paid</option>
+                      <option>Pending</option>
+                    </select>
+                  </div>
+                  
+                </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">cancel</button>
+              <button class="btn btn-primary" id="save-employees" data-dismiss="modal">Save changes</button>
+            </div>
+          </div>
+        </div>
+         </div>
+          </p>
+
+
+
+          <!-- FIND EMPLOYEE STATUS BY NAME -->
+
+          <p class="card-text more-queries">
+            <strong>Find an Employee:</strong> Get all the Information about a
+            certain employee by First Name, from the database.
+
+
+            <!-- Button trigger modal -->
+
+          <button type="button" class="btn btn-primary btn-sm " data-toggle="modal" data-target="#find-employee">
+             FIND EMPLOYEE
+              </button>
+              <div class="clearfix"></div>
+              
+              <!-- Modal -->
+              <div class="modal fade" id="find-employee" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalCenterTitle">Find Employee Data by First Name</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <!-- FIND EMPLOYEE BODY CONTENT -->
+                    <div class="modal-body" id = "find-employee-card-content">
+                     <form>
+                        <div class="form-group">
+                            <label for="create-employee-FN">Employee First Name</label>
+                            <input type="text" class="form-control" id="get-search-employee-FN" placeholder="E.g Abiodun">
+                        </div>
+                        <button type="button" class="btn btn-primary" id="find-employee-status">Search</button>
+                        </form>
+
+                        <div class="card" id = "find-employee-retrieve">
+                        </div> 
+
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">cancel</button>
+                     
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </p>
+          <p class="card-text more-queries">
+            <strong> Pay all Employees: </strong> Pay all the employees their
+            monthly salaries with a single click.
+
+                <!-- Button trigger modal -->
+          <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#pay-employee">
+                PAY NOW
+                 </button>
+                 
+                 <!-- PAY ALL EMPLOYEES Modal -->
+                 <div class="modal fade" id="pay-employee" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                   <div class="modal-dialog modal-dialog-centered" role="document">
+                     <div class="modal-content">
+                       <div class="modal-header">
+                         <h5 class="modal-title" id="exampleModalCenterTitle">Pay All Employees Now</h5>
+                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                           <span aria-hidden="true">&times;</span>
+                         </button>
+                       </div>
+
+                       
+                       <div class="modal-body ">
+                          <div id = "find-employee-payment-status">
+                              <p>Get a list of all Employees with Pending Status?</p>
+                              <button id= "get-all-employees-status" type="button" class="btn btn-dark btn-block">Yes</button>
+                          </div> 
+                          <div id="employee-status-div">
+                              <ol id="employee-status-list">
+                              
+                              </ol>
+                           
+                          </div>
+                           
+                          
+                       </div>
+                     </div>
+                   </div>
+                 </div>
+          </p>
+        </div>
+      </div>
+
+      <!-- UPDATE section -->
+
+      <div class="card" id="update-users-card">
+      </div>
+
+
+
+      
+
+      <!--EMPLOYEE Table AND OUTPUT DATA-->
+      <table id="tablePreview" class="table table-hover table-sm table-striped">
+        <!--Table head-->
+        <thead>
+          <tr>
+            <th>S/N</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Role</th>
+            <th>Amount(Naira)</th>
+            <th>Payment status</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <!--Table head-->
+        <!--Table body-->
+        <tbody id="employee-data">  
+        </tbody>
+        <!--Table body-->
+      </table>
+      <!--Table-->
+    </div>
+    
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

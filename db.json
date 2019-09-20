@@ -39,6 +39,14 @@
       "salary": "100000",
       "payment_status": "Paid",
       "id": 9
+    },
+    {
+      "first_name": "Oladokun",
+      "last_name": "Intern",
+      "role": "Manager",
+      "salary": "500000",
+      "payment_status": "Paid",
+      "id": 10
     }
   ],
   "admin": [
