@@ -42,10 +42,10 @@
     },
     {
       "first_name": "Oladokun",
-      "last_name": "Intern",
+      "last_name": "Oladapo",
       "role": "Manager",
+      "payment_status": "Pending",
       "salary": "500000",
-      "payment_status": "Paid",
       "id": 10
     }
   ],

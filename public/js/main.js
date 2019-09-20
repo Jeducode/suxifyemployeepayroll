@@ -30,14 +30,14 @@ $(document).ready(function() {
           <td>
           <a data-id="${
             employee.id
-          }"  class="btn btn-danger update-button" data-toggle="modal" data-target="#update-button" >
-          <i class="fa fa-edit"></i>
+          }"  class="btn btn-success update-button" data-toggle="modal" data-target="#update-button" >
+         Edit
           </a>
         
           </td>  
           <td>
           <a data-id="${employee.id}" class="btn btn-danger remove-button">
-          <i class="fa fa-trash-alt"></i>
+         Del
           </a>
           </td>   
           </tr> `
